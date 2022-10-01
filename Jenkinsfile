@@ -15,7 +15,7 @@ pipeline {
 
     stage('Non Functional Test (API Perf)') {
       steps {
-        sh 'echo "API performance testing)'
+        sh 'echo "API performance testing)"'
       }
     }
 
