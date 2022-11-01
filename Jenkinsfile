@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Start SoftwareUnderTest') {
       steps {
-        sh '/usr/bin/docker-compose up -d'
         sh 'echo "Start Application in Dev env(Docker)"'
+        sh '/usr/bin/docker-compose up -d'
       }
     }
 
