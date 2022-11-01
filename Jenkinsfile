@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '/usr/bin/docker-compose up'
+        sh '/usr/bin/docker-compose up -d'
         sh 'echo "Build Application from Trunk"'
       }
     }
