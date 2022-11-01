@@ -1,10 +1,10 @@
 pipeline {
   agent { label 'vm102-Linux' }
   stages {
-    stage('Build') {
+    stage('Start SoftwareUnderTest') {
       steps {
         sh '/usr/bin/docker-compose up -d'
-        sh 'echo "Build Application from Trunk"'
+        sh 'echo "Start Application in Dev env(Docker)"'
       }
     }
 
