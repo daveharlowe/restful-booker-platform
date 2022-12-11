@@ -25,9 +25,9 @@ mvn clean test'''
       }
     }
 
-    stage('Publish Test Reports via email') {
+    stage('Publish Test Reports') {
       steps {
-        sh 'echo "Publish Test reports via email"'
+        sh 'echo "Publish Test reports"'
       }
     }
 
