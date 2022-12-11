@@ -3,7 +3,7 @@ pipeline {
     label 'vm102-Linux'
   }
   stages {
-    stage('Start SoftwareUnderTest') {
+    stage('SelectReleaseVersionAndBuild SoftwareUnderTest') {
       steps {
         sh 'echo "Start Application in Dev env(Docker)"'
         sh '/usr/bin/docker-compose up -d'
