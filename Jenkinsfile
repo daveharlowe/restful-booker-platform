@@ -14,8 +14,8 @@ pipeline {
       steps {
         sh 'echo "Execute API/Functional Test cases"'
         git(url: 'https://github.com/daveharlowe/rbp-api-karate-test-automation', branch: 'main', credentialsId: 'Github-ssh-key')
-        sh 'cd api-auto-fw/'
-        sh 'mvn clean test'
+        sh '''cd api-auto-fw/
+mvn clean test'''
       }
     }
 
