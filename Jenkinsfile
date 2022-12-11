@@ -1,5 +1,7 @@
 pipeline {
-  agent { label 'vm102-Linux' }
+  agent {
+    label 'vm102-Linux'
+  }
   stages {
     stage('Start SoftwareUnderTest') {
       steps {
@@ -11,6 +13,7 @@ pipeline {
     stage('Functional Test') {
       steps {
         sh 'echo "Execute API/Functional Test cases"'
+        git(url: 'https://github.com/daveharlowe/rbp-api-karate-test-automation', branch: 'main', credentialsId: 'Github-ssh-key')
       }
     }
 
