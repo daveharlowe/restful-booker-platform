@@ -33,7 +33,7 @@ mvn clean test'''
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'target/karate-reports/',
+                    reportDir: 'api-auto-fw/target/karate-reports/',
                     reportFiles: 'karate-summary.html',
                     reportName: "RBP API Test Report"
                 ]
