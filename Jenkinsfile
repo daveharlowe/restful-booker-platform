@@ -28,6 +28,17 @@ mvn clean test'''
     stage('Publish Test Reports') {
       steps {
         sh 'echo "Publish Test reports"'
+         publishHTML (
+                target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'target/karate-reports/',
+                    reportFiles: 'karate-summary.html',
+                    reportName: "RBP API Test Report"
+                ]
+            )
+
       }
     }
 
