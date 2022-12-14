@@ -33,8 +33,8 @@ mvn clean test'''
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'api-auto-fw/target/karate-reports/',
-                    reportFiles: 'karate-summary.html',
+                    reportDir: 'api-auto-fw/target/surefire-reports/',
+                    reportFiles: 'TEST-authGetToken.authGetTokenTest.xml',
                     reportName: "RBP API Test Report"
                 ]
             )
