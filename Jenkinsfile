@@ -34,7 +34,7 @@ mvn clean test'''
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
                     reportDir: 'api-auto-fw/target/surefire-reports/',
-                    reportFiles: 'TEST-authGetToken.authGetTokenTest.xml',
+                    reportFiles: 'authGetToken.authGetTokenTest.txt',
                     reportName: "RBP API Test Report"
                 ]
             )
