@@ -22,6 +22,7 @@ mvn clean test'''
     stage('Non Functional Test (API Perf)') {
       steps {
         sh 'echo "API performance testing)"'
+        git(url: 'https://github.com/daveharlowe/rbp-api-jmeter-test-perf-testing', branch: 'main', credentialsId: 'Github-ssh-key')
       }
     }
 
