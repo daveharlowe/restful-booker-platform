@@ -13,7 +13,7 @@ pipeline {
     stage('Functional Test') {
       steps {
         sh 'echo "Execute API/Functional Test cases"'
-        git(url: 'https://github.com/daveharlowe/rbp-api-karate-test-automation', branch: 'main', credentialsId: 'Github-ssh-key')
+        git(url: 'https://github.com/daveharlowe/rbp-api-karate-test-automation', branch: 'main', credentialsId: 'JenkinsBlueOcean-Github')
         sh '''cd api-auto-fw/
 mvn clean test'''
       }
@@ -22,7 +22,7 @@ mvn clean test'''
     stage('Non Functional Test (API Perf)') {
       steps {
         sh 'echo "API performance testing)"'
-        git(url: 'https://github.com/daveharlowe/rbp-api-jmeter-test-perf-testing', branch: 'main', credentialsId: 'Github-ssh-key')
+        git(url: 'https://github.com/daveharlowe/rbp-api-jmeter-test-perf-testing', branch: 'main', credentialsId: 'JenkinsBlueOcean-Github')
       }
     }
 
