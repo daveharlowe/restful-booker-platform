@@ -22,25 +22,23 @@ mvn clean test'''
     stage('Non Functional Test (API Perf)') {
       steps {
         sh 'echo "API performance testing)"'
+        git(url: 'https://github.com/daveharlowe/rbp-api-jmeter-test-perf-testing', credentialsId: 'Github-ssh-key')
       }
     }
 
     stage('Publish Test Reports') {
       steps {
         sh 'echo "Publish Test reports"'
-         publishHTML (
-                target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'api-auto-fw/target/surefire-reports/',
-                    reportFiles: 'authGetToken.authGetTokenTest.txt',
-                    reportName: "RBP API Test Report"
-                ]
-            )
-
+        publishHTML([
+                              allowMissing: false,
+                              alwaysLinkToLastBuild: true,
+                              keepAll: true,
+                              reportDir: 'api-auto-fw/target/surefire-reports/',
+                              reportFiles: 'authGetToken.authGetTokenTest.txt',
+                              reportName: "RBP API Test Report"
+                          ])
+        }
       }
-    }
 
+    }
   }
-}
