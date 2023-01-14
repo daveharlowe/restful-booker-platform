@@ -18,6 +18,13 @@ pipeline {
 mvn clean test'''
       }
     }
+    
+    stage('Functional Test (UI)') {
+      steps {
+        sh 'echo "Execute UI/Functional Test cases"'
+      }
+    }
+
 
     stage('Non Functional Test (API Perf)') {
       steps {
