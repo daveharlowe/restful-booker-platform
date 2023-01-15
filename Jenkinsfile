@@ -18,18 +18,20 @@ pipeline {
 mvn clean test'''
       }
     }
-    
+
     stage('Functional Test (UI)') {
       steps {
         sh 'echo "Execute UI/Functional Test cases"'
       }
     }
 
-
     stage('Non Functional Test (API Perf)') {
       steps {
         sh 'echo "API performance testing)"'
         git(url: 'https://github.com/daveharlowe/rbp-api-jmeter-test-perf-testing', branch: 'main', credentialsId: 'JenkinsBlueOcean-Github')
+        sh '''chmod 755 apache-jmeter-5.5/bin/jmeter;
+apache-jmeter-5.5/bin/jmeter -n -t src/test/jmeter/rbp/scripts/GetRoom-all-rooms-rpb.jmx -l testresults.jtl
+'''
       }
     }
 
